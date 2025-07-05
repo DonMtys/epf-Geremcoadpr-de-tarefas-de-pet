@@ -1,1 +1,32 @@
-[]
+[
+    {
+        "id": 1,
+        "descricao": "arroz",
+        "concluida": true,
+        "id_lista": 2
+    },
+    {
+        "id": 2,
+        "descricao": "feijao",
+        "concluida": true,
+        "id_lista": 2
+    },
+    {
+        "id": 3,
+        "descricao": "feijÃ£o",
+        "concluida": true,
+        "id_lista": 2
+    },
+    {
+        "id": 4,
+        "descricao": "cinema",
+        "concluida": true,
+        "id_lista": 2
+    },
+    {
+        "id": 5,
+        "descricao": "arroz",
+        "concluida": true,
+        "id_lista": 3
+    }
+]

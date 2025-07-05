@@ -1,4 +1,4 @@
-%# views/lista_form.tpl
+%# views/tarefa_form.tpl
 <style>
     body {
         font-family: 'Segoe UI', Arial, sans-serif;
@@ -85,11 +85,11 @@
 </style>
 
 <div class="container">
-    <h2>{{'Editar Lista' if lista else 'Nova Lista'}}</h2>
-    <form action="{{!request.path}}" method="post">
-        <label for="nome">Adicionar na Lista:</label>
-        <input type="text" id="nome" name="nome" value="{{getattr(lista, 'nome', '')}}" required>
+    <h2>Adicionar Tarefa</h2>
+    <form action="" method="post">
+        <label for="descricao">Descrição da Tarefa:</label>
+        <input type="text" id="descricao" name="descricao" required>
         <button type="submit">Salvar</button>
     </form>
-    <a href="/listas" class="voltar">&larr; Voltar para Listas</a>
+    <a href="/listas/{{id_lista}}/tarefas" class="voltar">&larr; Voltar para Tarefas</a>
 </div>

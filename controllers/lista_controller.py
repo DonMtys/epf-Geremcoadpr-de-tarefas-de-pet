@@ -20,17 +20,14 @@ class ListaController(BaseController):
         return self.render('listas', listas=listas, erro_login=False)
 
     def nova_lista(self):
-        from services.user_service import UserService
-        user_service = UserService()
-        usuarios = user_service.get_all()
         if request.method == 'POST':
             nome = request.forms.get('nome')
-            id_usuario = request.forms.get('id_usuario')
+            id_usuario = request.get_cookie('usuario_logado')
             last_id = max([l.id for l in self.lista_service.get_all()], default=0)
             nova = Lista(id=last_id+1, nome=nome, id_usuario=id_usuario)
             self.lista_service.add_lista(nova)
             redirect('/listas')
-        return self.render('lista_form', lista=None, usuarios=usuarios)
+        return self.render('lista_form', lista=None)
 
     def editar_lista(self, id):
         lista = self.lista_service.get_by_id(id)

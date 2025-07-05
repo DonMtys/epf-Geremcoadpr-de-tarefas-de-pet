@@ -199,6 +199,7 @@
                     <td>{{lista.nome}}</td>
                     <td>{{lista.id_usuario}}</td>
                     <td>
+                        <a href="/listas/{{lista.id}}/tarefas" class="action-link">Ver Tarefas</a>
                         <a href="/listas/editar/{{lista.id}}" class="action-link">Editar</a>
                         <a href="/listas/remover/{{lista.id}}" class="action-link" onclick="return confirm('Tem certeza?')">Remover</a>
                     </td>

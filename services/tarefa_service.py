@@ -38,3 +38,12 @@ class TarefaService:
         tarefas = self.get_all()
         tarefas = [t for t in tarefas if t.id != tarefa_id]
         self.save_all(tarefas)
+
+    def get_by_lista(self, id_lista):
+        return [tarefa for tarefa in self.get_all() if str(tarefa.id_lista) == str(id_lista)]
+
+    def get_next_id(self):
+        tarefas = self.get_all()
+        if not tarefas:
+            return 1
+        return max(tarefa.id for tarefa in tarefas) + 1
