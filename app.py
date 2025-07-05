@@ -1,4 +1,4 @@
-from bottle import Bottle
+from bottle import Bottle, redirect
 from config import Config
 
 class App:
@@ -12,6 +12,11 @@ class App:
 
         print('🚀 Inicializa rotas!')
         init_controllers(self.bottle)
+        
+        # Redireciona '/' para '/listas'
+        @self.bottle.route('/')
+        def index():
+            redirect('/listas')
 
 
     def run(self):

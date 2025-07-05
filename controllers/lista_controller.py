@@ -1,7 +1,7 @@
 from .base_controller import BaseController
 from services.lista_service import ListaService
 from models.Lista import Lista
-from bottle import request
+from bottle import request, redirect
 
 class ListaController(BaseController):
     def __init__(self, app):
@@ -17,7 +17,7 @@ class ListaController(BaseController):
 
     def listar_listas(self):
         listas = self.lista_service.get_all()
-        return self.render('listas', listas=listas)
+        return self.render('listas', listas=listas, erro_login=False)
 
     def nova_lista(self):
         from services.user_service import UserService

@@ -1,7 +1,17 @@
 [
     {
         "id": 1,
-        "nome": "arroz",
+        "nome": "fazer compras ",
+        "id_usuario": "6"
+    },
+    {
+        "id": 2,
+        "nome": "fazer compras ",
+        "id_usuario": "1"
+    },
+    {
+        "id": 3,
+        "nome": "fazer compras ",
         "id_usuario": "1"
     }
 ]

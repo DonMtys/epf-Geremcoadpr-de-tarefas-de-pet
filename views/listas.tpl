@@ -157,38 +157,55 @@
 <div class="container">
     <h2>Listas de Tarefas</h2>
 
-    <!-- Formulário de Login Centralizado -->
-    <form action="/login" method="post" class="centered-form">
-        <label for="username">Usuário:</label>
-        <input type="text" id="username" name="username" required>
-        <label for="password">Senha:</label>
-        <input type="password" id="password" name="password" required>
-        <button type="submit">Entrar</button>
-        <a href="/cadastro" class="new-lista-btn" style="margin-top:1em;background:linear-gradient(90deg,#6a82fb 60%,#007bff 100%);">Cadastrar</a>
-    </form>
+    % from bottle import request
+    % import urllib.parse
 
-    <table>
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Nome</th>
-                <th>ID do Usuário</th>
-                <th>Ações</th>
-            </tr>
-        </thead>
-        <tbody>
-        % for lista in listas:
-            <tr>
-                <td>{{lista.id}}</td>
-                <td>{{lista.nome}}</td>
-                <td>{{lista.id_usuario}}</td>
-                <td>
-                    <a href="/listas/editar/{{lista.id}}" class="action-link">Editar</a>
-                    <a href="/listas/remover/{{lista.id}}" class="action-link" onclick="return confirm('Tem certeza?')">Remover</a>
-                </td>
-            </tr>
-        % end
-        </tbody>
-    </table>
-    <a href="/listas/nova" class="new-lista-btn">Nova Lista</a>
+    <div style="position:absolute;top:30px;left:40px;z-index:10;">
+    % if request.query.logout == '1':
+        <div style="background:#23243a;color:#fff;padding:10px 22px 10px 18px;border-radius:6px;font-weight:600;box-shadow:0 2px 8px rgba(0,0,0,0.13);font-size:1.1em;">Você saiu da conta.</div>
+    % end
+    </div>
+
+    % if not request.get_cookie('usuario_logado'):
+        <!-- Formulário de Login Centralizado -->
+        <form action="/login" method="post" class="centered-form">
+            % if erro_login:
+                <div style="color:#ff6b6b; margin-bottom:1em; text-align:center; font-weight:600;">Usuário ou senha inválidos!</div>
+            % end
+            <label for="username">Usuário:</label>
+            <input type="text" id="username" name="username" required>
+            <label for="password">Senha:</label>
+            <input type="password" id="password" name="password" required>
+            <button type="submit">Entrar</button>
+            <a href="/cadastro" class="new-lista-btn" style="margin-top:1em;background:linear-gradient(90deg,#6a82fb 60%,#007bff 100%);">Cadastrar</a>
+        </form>
+    % end
+
+    % if request.get_cookie('usuario_logado'):
+        <a href="/logout" style="position:absolute;top:30px;left:40px;z-index:10;background:#ff6b6b;color:#fff;padding:8px 18px 8px 18px;border-radius:6px;font-weight:600;text-decoration:none;box-shadow:0 2px 8px rgba(0,0,0,0.13);font-size:1em;">Sair</a>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>ID do Usuário</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+            % for lista in listas:
+                <tr>
+                    <td>{{lista.id}}</td>
+                    <td>{{lista.nome}}</td>
+                    <td>{{lista.id_usuario}}</td>
+                    <td>
+                        <a href="/listas/editar/{{lista.id}}" class="action-link">Editar</a>
+                        <a href="/listas/remover/{{lista.id}}" class="action-link" onclick="return confirm('Tem certeza?')">Remover</a>
+                    </td>
+                </tr>
+            % end
+            </tbody>
+        </table>
+        <a href="/listas/nova" class="new-lista-btn">Nova Lista</a>
+    % end
 </div>
