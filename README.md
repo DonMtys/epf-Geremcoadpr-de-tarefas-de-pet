@@ -76,3 +76,9 @@ Para adicionar novas entidades:
 - Crie o controller em `controllers/`
 - Crie as views em `views/`
 - Atualize rotas e navegação conforme necessário
+
+
+## UML 
+
+
+![image](https://github.com/user-attachments/assets/74ce7a65-5223-4b17-ae79-c4cf3d8c2e15)
