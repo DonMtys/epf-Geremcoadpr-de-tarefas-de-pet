@@ -70,5 +70,13 @@
         "birthdate": "-",
         "username": "donmty",
         "password": "99812345"
+    },
+    {
+        "id": 10,
+        "name": "JoÃ£o Silva",
+        "email": "joao@teste.com",
+        "birthdate": "-",
+        "username": "joao",
+        "password": "123456"
     }
 ]
