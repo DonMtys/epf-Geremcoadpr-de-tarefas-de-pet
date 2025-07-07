@@ -2,6 +2,25 @@
 
 Desenvolver um sistema web de listas de tarefas multiusuário, utilizando Python, Bottle, padrão MVC, orientação a objetos e persistência em JSON. O sistema permite cadastro, login, criação, edição e remoção de listas e tarefas, com interface moderna e autenticação.
 
+## Demonstração 
+Pagina inicial 
+
+![image](https://github.com/user-attachments/assets/72e2af02-6de4-41df-9c0f-188cde0d77cf)
+
+Pagina de Cadastro
+
+![image](https://github.com/user-attachments/assets/e1266441-d348-47a7-afeb-83ed593d0da7)
+
+Pagina de Lista 
+
+![image](https://github.com/user-attachments/assets/0aa8b6fc-ff5d-44bf-bc91-f7716ead63fb)
+
+Pagina de Tarefas 
+
+![image](https://github.com/user-attachments/assets/9ec8b900-20e2-4c8c-9e50-41da45f246a6)
+
+
+
 ## Etapas do Desenvolvimento
 
 ### 1. Estruturação do Projeto
@@ -42,11 +61,6 @@ Desenvolver um sistema web de listas de tarefas multiusuário, utilizando Python
 
 - Adicionei autenticação, proteção de rotas, filtro de listas por usuário logado, validação de campos e mensagens de feedback.
 - Implementei botão de concluir tarefa e mensagem de finalização de lista.
-
-### 9. Documentação e Diagrama
-
-- Escrevi o README.md explicando a estrutura, execução e personalização do sistema.
-- Modelei o diagrama UML das classes, mostrando herança e associações.
 
 ## Como Executar
 
